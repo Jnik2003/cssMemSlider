@@ -1,7 +1,55 @@
-html, body{
+*{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #25282A;
 }
 .wrap{
-	
+	/*max-width: 1440px;
+	width: 100%;
+	min-height: 80vh;
+	height: 1px;*/
+	margin: 0 auto;
+	position: relative;	
+	width: 80vw;
+	height: 50vw;
+}
+.wrap > input{
+	display:  none;
+}
+.slider {	
+	height: inherit;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: inherit;
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	-o-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+.slides {
+	height: inherit;
+	position: absolute;
+	width: inherit;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.slide1{	
+	background-image: url('.././img/1.jpg');
+}
+.slide2{
+	background-image: url('.././img/2.jpg');
+}
+.slide3{
+	background-image: url('.././img/3.jpg');
+}
+.slide4{
+	background-image: url('.././img/4.jpg');
+}
+.slide5{
+	background-image: url('.././img/5.jpg');
 }
