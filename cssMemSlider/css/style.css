@@ -10,8 +10,8 @@ body {
     background-color: #25282A;
     width: 100%;
     max-height: 100vh;
-     margin: 0 auto;
-     overflow: hidden;
+    margin: 0 auto;
+    /*overflow: hidden;*/
 }
 
 .wrap {
@@ -30,17 +30,17 @@ body {
     height: 100%;
     overflow: hidden;
     position: relative;
-    width: inherit;    
-    border-radius: 10px;
+    width: inherit;
+       
 }
 
 .slides {
     height: inherit;
-    position: absolute;
     width: inherit;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 1rem; 
 }
 
 .slide1 {
@@ -63,36 +63,10 @@ body {
     background-image: url('.././img/5.jpg');
 }
 
-.wrap .controls {
-    /*left: 50%;*/
-    right: 0;
-    margin-left: -98px;
-    position: absolute;
-}
-
-.wrap label {
-    cursor: pointer;
-    display: inline-block;
-    height: 8px;
-    margin: 25px 12px 0 16px;
+.wrap .controls {   
     position: relative;
-    width: 8px;    
-    border-radius: 50%;
-}
-
-.wrap label:after {
-    border: 2px solid #ddd;
-    content: " ";
-    display: block;
-    height: 12px;
-    left: -4px;
-    position: absolute;
-    top: -4px;
-    width: 12px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
+    float: right;
+    z-index: 15;
 }
 
 .wrap label {
@@ -103,7 +77,29 @@ body {
     position: relative;
     width: 8px;
     border-radius: 50%;
-    transition: background ease-in-out .5s;
+}
+
+.wrap label:after {
+    border: 2px solid #ddd;
+    content: " ";
+    display: block;
+    height: 20px;
+    left: -3px;
+    position: relative;    
+    top: -3px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.wrap label {
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    margin: 25px 12px 0 16px;
+    position: relative;
+    width: 18px;
+    border-radius: 50%;
+    transition: background ease-in-out .3s;
 }
 
 .wrap label:hover,
@@ -115,10 +111,21 @@ body {
     background: #ccc;
 }
 
+.wrap label:active,
+#slide1:checked~.controls label:nth-of-type(1),
+#slide2:checked~.controls label:nth-of-type(2),
+#slide3:checked~.controls label:nth-of-type(3),
+#slide4:checked~.controls label:nth-of-type(4),
+#slide5:checked~.controls label:nth-of-type(5) {
+    background: #6DBEF3;
+}
+
 .slides {
-    height: inherit;
+    /*height: inherit;*/
     opacity: 0;
-    position: absolute;
+    width: 65vw;
+    height: 37vw;    
+    position: fixed;
     width: inherit;
     z-index: 0;
     transition: transform ease-in-out .5s, opacity ease-in-out .5s;
@@ -146,36 +153,64 @@ body {
 }
 
 .blocktext {
-    margin-top: 10px;
+    margin-top: 20px;
     position: relative;
 }
 
 .text {
     opacity: 0;
-    z-index: 0;
-    position: absolute;
+    z-index: 0;  
+    position: fixed;
     transform: translateX(-500px);
     transition: .7s;
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: 100;
 }
 
-@media (max-width: 1024px) {
-    .wrap{
-    	margin: 50px auto;
-    position: relative;
-    width: 85vw;
-    height: 47vw;
+@media (max-width: 1200px) {
+    .text {
+        font-size: 1.5rem;
     }
+}
+
+@media (max-width: 1024px) {
+    .wrap {
+        position: relative;
+        width: 85vw;
+        height: 47vw;
+    }
+
+    .slides {
+        width: 85vw;
+        height: 47vw;
+    }
+
     .blocktext {
-    margin-top: 60px;
-    position: relative;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .text {
+        font-size: 24px;
+    }
+
+    .wrap .controls {
+        float: none;
+        margin: 0 auto;
+        max-width: 250px;
+        width: 100%;
+    }
+
+    .wrap label:after {
+    width: 18px;
+    height: 18px;   
+    left: -3px;     
+    top: -3px;   
 }
-    .text {    
-    font-size: 24px;    
-}
-.wrap .controls {
-    left: 50%;    
+
+.wrap label {
+    width: 16px;
+    height: 16px;    
 }
 
 }
